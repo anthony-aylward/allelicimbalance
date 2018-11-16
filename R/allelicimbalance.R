@@ -75,7 +75,7 @@ log_posterior_allelic_fold_change <- function(
   shift_term <- log2(shape1) - log2(shape2)
   list(
     lpafc = log2(1 - posterior_mean) - log2(posterior_mean) + shift_term,
-    lower = log2(1 - lower) - log2(lower) + shift_term,
-    upper = log2(1 - upper) - log2(upper) + shift_term
+    lower = log2(1 - upper) - log2(upper) + shift_term,
+    upper = log2(1 - lower) - log2(lower) + shift_term
   )
 }
