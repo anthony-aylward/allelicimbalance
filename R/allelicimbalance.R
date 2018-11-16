@@ -62,7 +62,7 @@ log_posterior_allelic_fold_change <- function(
   )
   lower_prob <- posterior_mean_quantile - level / 2
   upper_prob <- posterior_mean_quantile + level / 2
-  if (lower_prob > 0 && upper_prob < 1) {
+  if ((lower_prob > 0) && (upper_prob < 1)) {
     lower <- qbeta(lower_prob, shape1 + count1, shape2 + count2)
     upper <- qbeta(upper_prob, shape1 + count1, shape2 + count2)
   } else if (lower_prob > 0) {
