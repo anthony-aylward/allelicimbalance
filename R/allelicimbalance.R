@@ -66,11 +66,11 @@ log_posterior_allelic_fold_change <- function(
     lower <- qbeta(lower_prob, shape1 + count1, shape2 + count2)
     upper <- qbeta(upper_prob, shape1 + count1, shape2 + count2)
   } else if (lower_prob > 0) {
-    lower <- qbeta(1 - level, shape1 + count1, shape2 + count2)
-    upper <- 1
-  } else if (upper_prob < 1) {
     lower <- 0
     upper <- qbeta(level, shape1 + count1, shape2 + count2)
+  } else if (upper_prob < 1) {
+    lower <- qbeta(level, shape1 + count1, shape2 + count2, lower.tail = FALSE)
+    upper <- 1
   }
   shift_term <- log2(shape1) - log2(shape2)
   list(
