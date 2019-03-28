@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='allelicimbalance',
-    version='0.0.1',
+    version='0.0.2',
     author='Anthony Aylward',
     author_email='aaylward@eng.ucsd.edu',
     description='Utilities for studying allelic imbalance',
