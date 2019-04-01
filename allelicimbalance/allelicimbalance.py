@@ -93,6 +93,6 @@ def log_posterior_allelic_fold_change(
     shift_term = log2(a) - log2(b)
     return {
         'lpafc': log2(1 - posterior_mean) - log2(posterior_mean) + shift_term,
-        'lower': log2(1 - upper) - log2(upper) + shift_term,
-        'upper': log2(1 - lower) - log2(lower) + shift_term
+        'lower': float('-inf') if upper == 1 else log2(1 - upper) - log2(upper) + shift_term,
+        'upper': float('inf') if lower == 0 else log2(1 - lower) - log2(lower) + shift_term
     }
