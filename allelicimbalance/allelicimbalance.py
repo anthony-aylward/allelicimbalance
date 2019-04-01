@@ -70,6 +70,11 @@ def log_posterior_allelic_fold_change(
         second shape parameter
     level : float
         credibility level for credible interval
+
+    Returns
+    ----------
+    dict
+       A dictionary with keys 'lpafc', 'lower', and 'upper'
     """
 
     posterior_mean = (a + c0) / (a + c0 + b + c1)
