@@ -72,7 +72,7 @@ def log_posterior_allelic_fold_change(
         credibility level for credible interval
 
     Returns
-    ----------
+    -------
     dict
        A dictionary with keys 'lpafc', 'lower', and 'upper'
     """
