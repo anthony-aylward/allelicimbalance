@@ -81,7 +81,7 @@ def log_posterior_allelic_fold_change(
     posterior_mean_quantile = beta.cdf(posterior_mean, a + c0, b + c1)
     lower_prob = posterior_mean_quantile - level / 2
     upper_prob = posterior_mean_quantile + level / 2
-    if lower_prob > 0 and upper_prob < 1:
+    if (lower_prob > 0) and (upper_prob < 1):
         lower = beta.ppf(lower_prob, a + c0, b + c1)
         upper = beta.ppf(upper_prob, a + c0, b + c1)
     elif lower_prob > 0:
