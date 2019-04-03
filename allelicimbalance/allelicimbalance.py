@@ -24,7 +24,9 @@ def betabinom_test(
     a: float,
     b: float,
     alternative: str = 'two-sided',
-    processes: int = 1
+    processes: int = 1,
+    max_iter: int = 32,
+    graceful: bool = False
 ):
     """Perform a hypothesis test using a beta-binomial distribution
 
@@ -50,7 +52,8 @@ def betabinom_test(
     """
 
     return bbs_test(
-        x, (n,), (a,), (b,), alternative=alternative, processes=processes
+        x, (n,), (a,), (b,), alternative=alternative, processes=processes,
+        max_iter=max_iter, graceful=graceful
     )
 
 
