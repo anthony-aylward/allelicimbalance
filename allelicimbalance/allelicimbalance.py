@@ -23,7 +23,8 @@ def betabinom_test(
     n: int,
     a: float,
     b: float,
-    alternative: str = 'two-sided'
+    alternative: str = 'two-sided',
+    processes: int = 1
 ):
     """Perform a hypothesis test using a beta-binomial distribution
 
@@ -39,6 +40,8 @@ def betabinom_test(
         second shape parameter
     alternative : str
         alternative hypothesis {'less', 'greater', 'two-sided'}
+    processes : int
+        number of processes to use
     
     Returns
     -------
@@ -46,7 +49,9 @@ def betabinom_test(
         the p-value of the hypothesis test
     """
 
-    return bbs_test(x, (n,), (a,), (b,), alternative=alternative)
+    return bbs_test(
+        x, (n,), (a,), (b,), alternative=alternative, processes=processes
+    )
 
 
 def log_posterior_allelic_fold_change(
