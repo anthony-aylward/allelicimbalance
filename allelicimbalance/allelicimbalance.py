@@ -93,7 +93,7 @@ def log_posterior_allelic_fold_change(
         lower = 0
         upper = beta.ppf(level, a + c0, b + c1)
     elif upper_prob < 1:
-        lower = 1 - beta.ppf(level, a + c0, b + c1)
+        lower = beta.ppf(1 - level, a + c0, b + c1)
         upper = 1
     shift_term = log2(a) - log2(b)
     return {
